@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Inject} from '@angular/core';
+import { FormGroup, Validators, FormArray, FormBuilder} from '@angular/forms';
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.component.html',
@@ -11,9 +12,12 @@ export class ProductosComponent implements OnInit {
   @Input() productosJson: any;
   @Input() productos: any;
   @Input() filtrosForm: any;
-  @Input() filtroNombreForm: any;
+  filtroNombreForm: any;
 
-  constructor() {
+  constructor(private formBuilder: FormBuilder) {
+    this.filtroNombreForm = this.formBuilder.group({
+      nombre: ''
+    });
   }
 
   ngOnInit() {
@@ -40,8 +44,6 @@ export class ProductosComponent implements OnInit {
   }
 
   verificarFiltro(producto, idSubnivel, disponible, precio1, precio2, stock, index) {
-    let auxNombre: any;
-    auxNombre = producto.nombre.includes(this.filtroNombreForm.value.nombre);
     let estado: any;
     if (disponible === 'Disponible') {
       estado = true;
@@ -60,14 +62,14 @@ export class ProductosComponent implements OnInit {
     Auxprecio = +Auxprecio;
     if (disponible === 'Ambos') {
       if ((producto.subnivelId === idSubnivel) && (Auxprecio > precio1) && (Auxprecio < precio2) &&
-        (producto.cantidad >= stock) && auxNombre) {
+        (producto.cantidad >= stock)) {
           this.productos[index].filtro = true;
       } else {
         this.productos[index].filtro = false;
       }
     } else {
       if ((producto.subnivelId === idSubnivel) && (producto.disponible === estado) && (Auxprecio > precio1) &&
-        (Auxprecio < precio2) && (producto.cantidad >= stock) && auxNombre) {
+        (Auxprecio < precio2) && (producto.cantidad >= stock)) {
           this.productos[index].filtro = true;
       } else {
         this.productos[index].filtro = false;

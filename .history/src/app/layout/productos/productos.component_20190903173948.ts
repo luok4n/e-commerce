@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Inject} from '@angular/core';
+import { FormGroup, Validators, FormArray, FormBuilder} from '@angular/forms';
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.component.html',
@@ -11,9 +12,12 @@ export class ProductosComponent implements OnInit {
   @Input() productosJson: any;
   @Input() productos: any;
   @Input() filtrosForm: any;
-  @Input() filtroNombreForm: any;
+  filtroNombreForm: any;
 
-  constructor() {
+  constructor(private formBuilder: FormBuilder) {
+    this.filtroNombreForm = this.formBuilder.group({
+      nombre: ''
+    });
   }
 
   ngOnInit() {

@@ -19,7 +19,6 @@ export class TopnavComponent implements OnInit {
     @Input() myForm: any;
     @Input() productos: any;
     @Input() filtroFlag: any;
-    @Input() filtroNombreForm: any;
 
     constructor(
       public router: Router) {

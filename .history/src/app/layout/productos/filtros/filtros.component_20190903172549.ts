@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Inject} from '@angular/core';
+import { FormGroup, Validators, FormArray, FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-filtros',
@@ -12,10 +13,15 @@ export class FiltrosComponent implements OnInit {
   @Input() productos: any;
   @Input() myForm: any;
   @Input() filtroFlag: any;
-  @Input() filtrosForm: any;
-  @Input() filtroNombreForm: any;
+  filtrosForm: any;
 
-  constructor() {
+  constructor(private formBuilder: FormBuilder) {
+    this.filtrosForm = this.formBuilder.group({
+      Disponibilidad: ['Ambos'],
+      precio1: 0,
+      precio2: 9999999,
+      stock: 0
+    });
   }
 
   disponibilidadList: string[] = ['Ambos', 'Disponible', 'No disponible'];
@@ -44,6 +50,7 @@ export class FiltrosComponent implements OnInit {
 
   onChangesCategoria(): void {
     this.myForm.valueChanges.subscribe(val => {
+      console.log(this.myForm.value);
       for (let i = 0; i < this.productos.length; i++) {
         this.verificarFiltro(this.productos[i], this.myForm.value.idSubnivel, this.filtrosForm.value.Disponibilidad,
           this.filtrosForm.value.precio1, this.filtrosForm.value.precio2, this.filtrosForm.value.stock, i);

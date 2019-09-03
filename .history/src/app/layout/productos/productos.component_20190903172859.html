@@ -1,0 +1,12 @@
+<form [formGroup]="filtroNombreForm">
+  <mat-form-field class="example-full-width">
+    <input matInput formControlName="nombre" placeholder="Nombre del producto">
+  </mat-form-field>
+</form>
+<div *ngFor="let producto of productos">
+  <div *ngIf="producto.filtro">
+    <app-producto [producto]="producto"></app-producto>
+  </div>
+</div>
+<br>
+<br>

@@ -12,7 +12,6 @@ export class LayoutComponent implements OnInit {
 
     myForm: any;
     filtrosForm: any;
-    filtroNombreForm: any;
 
     constructor(private formBuilder: FormBuilder) {
       this.myForm = this.formBuilder.group({
@@ -25,10 +24,6 @@ export class LayoutComponent implements OnInit {
         precio1: 0,
         precio2: 9999999,
         stock: 0
-      });
-
-      this.filtroNombreForm = this.formBuilder.group({
-        nombre: ''
       });
     }
 

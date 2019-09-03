@@ -1,37 +1,31 @@
 import { Component, OnInit, Input, Inject} from '@angular/core';
+
 @Component({
-  selector: 'app-productos',
-  templateUrl: './productos.component.html',
-  styleUrls: ['./productos.component.scss']
+  selector: 'app-filtros',
+  templateUrl: './filtros.component.html',
+  styleUrls: ['./filtros.component.scss']
 })
 
-export class ProductosComponent implements OnInit {
+export class FiltrosComponent implements OnInit {
 
-  @Input() myForm: any;
-  @Input() productosJson: any;
+
   @Input() productos: any;
+  @Input() myForm: any;
+  @Input() filtroFlag: any;
   @Input() filtrosForm: any;
-  @Input() filtroNombreForm: any;
 
   constructor() {
   }
 
+  disponibilidadList: string[] = ['Ambos', 'Disponible', 'No disponible'];
+
   ngOnInit() {
     this.onChanges();
-    this.obtenerProductos();
-  }
-
-  obtenerProductos() {
-    let auxiliar: any;
-    auxiliar = this.productosJson;
-    for (let i = 0; i < auxiliar.length; i++) {
-      this.productos[i] = {id: auxiliar[i].id, nombre: auxiliar[i].name, precio: auxiliar[i].price, cantidad: auxiliar[i].quantity,
-        disponible: auxiliar[i].available, subnivelId: auxiliar[i].sublevel_id, filtro: false};
-    }
+    this.onChangesCategoria();
   }
 
   onChanges(): void {
-    this.filtroNombreForm.valueChanges.subscribe(val => {
+    this.filtrosForm.valueChanges.subscribe(val => {
       for (let i = 0; i < this.productos.length; i++) {
         this.verificarFiltro(this.productos[i], this.myForm.value.idSubnivel, this.filtrosForm.value.Disponibilidad,
           this.filtrosForm.value.precio1, this.filtrosForm.value.precio2, this.filtrosForm.value.stock, i);
@@ -39,9 +33,29 @@ export class ProductosComponent implements OnInit {
     });
   }
 
+  filtrarDisponible(producto, estado) {
+    if (producto.disponible === estado) {
+      producto.filtro = true;
+    } else {
+      producto.filtro = false;
+    }
+  }
+
+  onChangesCategoria(): void {
+    this.myForm.valueChanges.subscribe(val => {
+      for (let i = 0; i < this.productos.length; i++) {
+        this.verificarFiltro(this.productos[i], this.myForm.value.idSubnivel, this.filtrosForm.value.Disponibilidad,
+          this.filtrosForm.value.precio1, this.filtrosForm.value.precio2, this.filtrosForm.value.stock, i);
+      }
+      if (this.myForm.value.hijosFlag === true) {
+        this.filtroFlag = true;
+      } else {
+        this.filtroFlag = false;
+      }
+    });
+  }
+
   verificarFiltro(producto, idSubnivel, disponible, precio1, precio2, stock, index) {
-    let auxNombre: any;
-    auxNombre = producto.nombre.includes(this.filtroNombreForm.value.nombre);
     let estado: any;
     if (disponible === 'Disponible') {
       estado = true;
@@ -60,14 +74,14 @@ export class ProductosComponent implements OnInit {
     Auxprecio = +Auxprecio;
     if (disponible === 'Ambos') {
       if ((producto.subnivelId === idSubnivel) && (Auxprecio > precio1) && (Auxprecio < precio2) &&
-        (producto.cantidad >= stock) && auxNombre) {
+        (producto.cantidad >= stock)) {
           this.productos[index].filtro = true;
       } else {
         this.productos[index].filtro = false;
       }
     } else {
       if ((producto.subnivelId === idSubnivel) && (producto.disponible === estado) && (Auxprecio > precio1) &&
-        (Auxprecio < precio2) && (producto.cantidad >= stock) && auxNombre) {
+        (Auxprecio < precio2) && (producto.cantidad >= stock)) {
           this.productos[index].filtro = true;
       } else {
         this.productos[index].filtro = false;

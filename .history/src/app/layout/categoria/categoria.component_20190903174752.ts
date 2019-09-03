@@ -23,7 +23,6 @@ export class CategoriaComponent implements OnInit {
   }
 
   select(item) {
-    this.filtroNombreForm.controls.nombre.setValue('');
     if (item.item.dataItem.sublevels !== undefined) {
       this.myForm.controls.hijosFlag.setValue(false);
     } else {

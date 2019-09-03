@@ -1,0 +1,9 @@
+<app-topnav [categorias]="categorias" [myForm]="myForm" [filtrosForm]="filtrosForm" [filtroFlag]="filtroFlag" [productos]="productos"></app-topnav>
+<div class="main-container">
+  <div class="visible-md">
+    <app-productos [productosJson]="productosJs" [productos]="productos" [filtrosForm]="filtrosForm" [myForm]="myForm"></app-productos>
+  </div>
+  <div class="visible-sm">
+    <app-productos [productosJson]="productosJs" [productos]="productos" [filtrosForm]="filtrosForm" [myForm]="myForm"></app-productos>
+  </div>
+</div>
