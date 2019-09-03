@@ -1,0 +1,22 @@
+.visible-md {
+  display: none;
+}
+
+.visible-sm {
+  display: none;
+  padding-left: 250px;
+}
+
+
+@media screen and (max-width: 992px) {
+  .visible-md {
+      display: block;
+  }
+}
+@media screen and (max-width: 768px) {
+  .visible-sm {
+      display: block;
+  }
+
+}
+

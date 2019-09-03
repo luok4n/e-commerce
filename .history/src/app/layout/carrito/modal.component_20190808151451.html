@@ -1,0 +1,145 @@
+<mat-horizontal-stepper #stepper *ngIf="!remision">
+  <mat-step>
+    <ng-template matStepLabel>Datos</ng-template>
+    <div fxLayout="row" fxFlex fxLayoutGap="20px">
+      <a>Definicion: </a>
+      <span [innerHTML]="componenteAuxModal.definicion" class="rendered-quill-content ql-editor"></span>
+    </div>
+    <br>
+    <div fxLayout="row" fxFlex fxLayoutGap="20px">
+      <a>Responsables: </a>
+      <span class="rendered-quill-content ql-editor">{{componenteAuxModal.responsables}}</span>
+    </div>
+    <br>
+    <div fxLayout="row" fxFlex fxLayoutGap="20px">
+      <a>Responsables sectoriales: </a>
+      <span class="rendered-quill-content ql-editor">{{componenteAuxModal.responsablesSectoriales}}</span>
+    </div>
+    <br>
+    <div fxLayout="row" fxFlex fxLayoutGap="20px">
+      <a>Responsables intersectoriales: </a>
+      <span class="rendered-quill-content ql-editor">{{componenteAuxModal.responsablesIntersectoriales}}</span>
+    </div>
+    <br>
+    <div fxLayout="row" fxFlex fxLayoutGap="20px">
+      <a>Mecanismo de entrega: </a>
+      <span [innerHTML]="componenteAuxModal.mecanismoEntrega" class="rendered-quill-content ql-editor"></span>
+    </div>
+    <br>
+    <div fxLayout="row" fxFlex fxLayoutGap="20px">
+      <a>Frecuencia de uso: </a>
+      <span [innerHTML]="componenteAuxModal.frecuenciaUso" class="rendered-quill-content ql-editor"></span>
+    </div>
+    <br>
+    <div fxLayout="row" fxFlex fxLayoutGap="20px">
+      <a>Linea PDSP: </a>
+      <span class="rendered-quill-content ql-editor">{{componenteAuxModal.lineaPDSP}}</span>
+    </div>
+    <br>
+    <div fxLayout="row" fxFlex fxLayoutGap="20px">
+      <a>Entorno: </a>
+      <span class="rendered-quill-content ql-editor">{{componenteAuxModal.entorno}}</span>
+    </div>
+    <br>
+    <div fxLayout="row" fxFlex fxLayoutGap="20px">
+      <a>Destinatario: </a>
+      <span class="rendered-quill-content ql-editor">{{componenteAuxModal.destinatario}}</span>
+    </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Estrategia</ng-template>
+    <div fxLayout="column" *ngFor="let est of componenteAuxModal.estrategia; let j=index">
+      <mat-card fxLayout="row">
+        <div fxFlex fxLayout="column">
+          <div fxLayout="row" fxFlex fxLayoutGap="20px">
+              <a>Evidencia de guia: </a>
+              <span class="rendered-quill-content ql-editor">{{est.evidencia}}</span>
+          </div>
+          <br>
+          <div fxLayout="row" fxFlex fxLayoutGap="20px">
+              <a>Palabras clave: </a>
+              <span [innerHTML]="est.palabras" class="rendered-quill-content ql-editor"></span>
+          </div>
+          <br>
+          <div fxLayout="row" fxFlex fxLayoutGap="20px">
+              <a>Bases: </a>
+              <span [innerHTML]="est.bases" class="rendered-quill-content ql-editor"></span>
+          </div>
+          <br>
+        </div>
+        <div fxFlex fxLayout="column">
+          <div fxLayout="row" fxFlex fxLayoutGap="20px">
+              <a>Bibliografia: </a>
+              <span [innerHTML]="est.bibliografia" class="rendered-quill-content ql-editor"></span>
+          </div>
+          <br>
+          <div fxLayout="row" fxFlex fxLayoutGap="20px">
+              <a>Link: </a>
+              <a href="" (click)="goTo(est.link)" target="_blank">{{est.link}}</a>
+          </div>
+          <br>
+          <div fxLayout="row" fxFlex fxLayoutGap="20px">
+              <a>Intervención del panel de expertos: </a>
+              <span [innerHTML]="est.actividad" class="rendered-quill-content ql-editor"></span>
+          </div>
+          <br>
+        </div>
+      </mat-card>
+      <br>
+    </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Implementacíon</ng-template>
+    <div fxLayout="row" fxFlex fxLayoutGap="20px">
+        <a>Referente operativo: </a>
+        <span [innerHTML]="componenteAuxModal.implementacion[0].referente" class="rendered-quill-content ql-editor"></span>
+    </div>
+    <br>
+    <div fxLayout="row" fxFlex fxLayoutGap="20px">
+        <a>Intervención: </a>
+        <span [innerHTML]="componenteAuxModal.implementacion[0].ejecucion" class="rendered-quill-content ql-editor"></span>
+    </div>
+    <br>
+    <div fxLayout="row" fxFlex fxLayoutGap="20px">
+        <a>Financiamiento: </a>
+        <span [innerHTML]="componenteAuxModal.implementacion[0].financiamiento" class="rendered-quill-content ql-editor"></span>
+    </div>
+    <br>
+    <div fxLayout="row" fxFlex fxLayoutGap="20px">
+        <a>Factores: </a>
+        <span [innerHTML]="componenteAuxModal.implementacion[0].factores" class="rendered-quill-content ql-editor"></span>
+    </div>
+    <br>
+    <div fxLayout="row" fxFlex fxLayoutGap="20px">
+        <a>Barreras: </a>
+        <span [innerHTML]="componenteAuxModal.implementacion[0].barreras" class="rendered-quill-content ql-editor"></span>
+    </div>
+    <br>
+    <div fxLayout="row" fxFlex fxLayoutGap="20px">
+        <a>Facilitador: </a>
+        <span [innerHTML]="componenteAuxModal.implementacion[0].facilitadores" class="rendered-quill-content ql-editor"></span>
+    </div>
+    <br>
+    <div fxLayout="row" fxFlex fxLayoutGap="20px">
+        <a>Requerimientos: </a>
+        <span [innerHTML]="componenteAuxModal.implementacion[0].requerimientos" class="rendered-quill-content ql-editor"></span>
+    </div>
+    <br>
+  </mat-step>
+</mat-horizontal-stepper>
+
+<div *ngIf="remision">
+  <mat-card fxLayout="column">
+    <a>{{componenteAuxModal.nombre}}</a>
+    <br>
+    <div fxLayout="row" fxFlex fxLayoutGap="20px">
+      <a>RIAS: </a>
+      <span class="rendered-quill-content ql-editor">{{nombreRias}}</span>
+    </div>
+    <br>
+    <div fxLayout="row" fxFlex fxLayoutGap="20px">
+      <a>Entrada: </a>
+      <span class="rendered-quill-content ql-editor">{{nombreEntrada}}</span>
+    </div>
+  </mat-card>
+</div>

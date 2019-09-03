@@ -1,0 +1,23 @@
+<mat-toolbar color="primary" class="fix-nav">
+    <button type="button" mat-icon-button class="visible-md" (click)="toggleSidebar()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    <div class="nav-brand" class="hidden-sm">
+        <a>El Baratón</a>
+        <br>
+    </div>
+    <br><br>
+    <span class="nav-spacer"></span>
+    <button type="button" mat-icon-button (click)="config()" matTooltip="Carrito de compras">
+        <mat-icon>shopping_cart</mat-icon>
+    </button>
+</mat-toolbar>
+
+<div id="sidebar">
+  <a>El Baratón</a>
+  <mat-nav-list>
+      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/config']">
+          <mat-icon class="sidenav-icon">shopping_cart</mat-icon>Carrito de compras
+      </a>
+  </mat-nav-list>
+</div>

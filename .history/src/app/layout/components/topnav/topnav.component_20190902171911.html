@@ -1,0 +1,24 @@
+<mat-toolbar color="primary" class="fix-nav">
+    <button type="button" mat-icon-button class="visible-md" (click)="toggleSidebar()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    <div class="nav-brand" >
+        El Baratón
+        <br>
+    </div>
+    <br><br>
+    <span class="nav-spacer"></span>
+    <button type="button" mat-icon-button matTooltip="Carrito de compras">
+        <mat-icon>shopping_cart</mat-icon>
+    </button>
+</mat-toolbar>
+
+<div id="sidebar">
+  <div class="ex1">
+    <br>
+    Categorias
+    <br>
+    <app-categoria [categoria]="categorias" [index]="1"></app-categoria>
+  </div>
+
+</div>

@@ -1,0 +1,26 @@
+<div>
+  <br>
+  <mat-accordion >
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+              {{categoria[index].name}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div *ngFor="let item of categoria[index].sublevels; let i=index">
+            <mat-accordion >
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                    {{item.name}}
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <app-categoria [categoria]="categoria" [index]="i" ></app-categoria>
+                </mat-expansion-panel>
+              </mat-accordion>
+          </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  <br>
+</div>
+
