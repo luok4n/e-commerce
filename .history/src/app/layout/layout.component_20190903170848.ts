@@ -24,7 +24,6 @@ export class LayoutComponent implements OnInit {
     productos: Array<any> = [];
     hijosFlag: any;
     idSubnivel: any;
-    filtroFlag: any;
 
     ngOnInit() {
       this.productosJs = productosJson.products;

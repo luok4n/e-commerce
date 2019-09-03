@@ -11,6 +11,8 @@ export class ProductosComponent implements OnInit {
   @Input() myForm: any;
   @Input() productosJson: any;
   @Input() productos: any;
+  filtroFlag: any;
+  filtrosForm: any;
 
   constructor() {
   }
