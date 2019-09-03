@@ -1,0 +1,7 @@
+<form [formGroup]="filtrosForm">
+  <mat-form-field>
+    <mat-select formControlName="Disponibilidad">
+        <mat-option  placeholder="Disponibilidad" *ngFor="let disponibilidad of disponibilidadList" [value]="disponibilidad">{{disponibilidad}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>

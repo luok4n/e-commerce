@@ -1,0 +1,26 @@
+<form [formGroup]="filtrosForm">
+  <div fxLayoutGap="1%" fxFlex fxLayout.lt-md="column">
+      <div fxFlex>
+        <mat-form-field>
+          <mat-select formControlName="Disponibilidad" placeholder="Disponibilidad">
+              <mat-option *ngFor="let disponibilidad of disponibilidadList" [value]="disponibilidad">{{disponibilidad}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div fxFlex>
+        <mat-form-field class="example-full-width">
+          <input matInput formControlName="precio1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder="Precio minimo">
+        </mat-form-field>
+      </div>
+      <div fxFlex>
+        <mat-form-field class="example-full-width">
+          <input matInput formControlName="precio2" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder="Precio maximo">
+        </mat-form-field>
+      </div>
+      <div fxFlex>
+        <mat-form-field class="example-full-width">
+          <input matInput formControlName="stock" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder="Stock">
+        </mat-form-field>
+      </div>
+  </div>
+</form>

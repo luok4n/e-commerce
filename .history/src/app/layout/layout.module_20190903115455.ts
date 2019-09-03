@@ -11,8 +11,7 @@ import {
     MatTooltipModule,
     MatExpansionModule,
     MatCardModule,
-    MatSelectModule,
-    MatDialogModule
+    MatSelectModule
 } from '@angular/material';
 import { TranslateModule } from '@ngx-translate/core';
 import { TopnavComponent } from './components/topnav/topnav.component';
@@ -47,17 +46,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         FormsModule,
         MatButtonModule,
         MatSelectModule,
-        FlexLayoutModule.withConfig({addFlexToParent: false}),
-        MatDialogModule,
-        MatIconModule,
-        MatTooltipModule,
-        MatInputModule,
-        MatCardModule,
-        MatSidenavModule,
-        MatListModule,
-        MatExpansionModule,
-        MatSelectModule,
-        MatDialogModule
+        FlexLayoutModule.withConfig({addFlexToParent: false})
     ],
     exports: [
       CarritoComponent,

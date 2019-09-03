@@ -1,0 +1,15 @@
+<form [formGroup]="filtrosForm">
+  <div fxLayoutGap="20px">
+  <mat-form-field>
+    <mat-select formControlName="Disponibilidad" placeholder="Disponibilidad">
+        <mat-option *ngFor="let disponibilidad of disponibilidadList" [value]="disponibilidad">{{disponibilidad}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput formControlName="precio1" style="text-transform:uppercase" placeholder="Precio minimo">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput formControlName="precio2" style="text-transform:uppercase" placeholder="Precio maximo">
+  </mat-form-field>
+  </div>
+</form>

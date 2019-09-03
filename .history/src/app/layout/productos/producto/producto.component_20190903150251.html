@@ -7,6 +7,6 @@
   <br>
   <br>
   <button *ngIf="producto.disponible" mat-raised-button color="primary" (click)="agregarProducto()">Agregar producto</button>
-  <button *ngIf="!producto.disponible" mat-raised-button color="primary" disabled >Producto no disponible</button>
+  <button *ngIf="!producto.disponible" mat-raised-button color="primary" disabled matTooltip="Producto no disponible">Agregar producto</button>
   </mat-card>
 </div>

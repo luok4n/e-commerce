@@ -1,5 +1,5 @@
 <div>
-  <app-filtros [productos]="productos" [filtroFlag]="filtroFlag" [myForm]="myForm"></app-filtros>
+  <app-filtros [productos]="productos" [filtrosForm]="filtrosForm" [myForm]="myForm"></app-filtros>
 </div>
 <div *ngFor="let producto of productos">
   <div *ngIf="producto.filtro">

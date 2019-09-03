@@ -11,8 +11,7 @@ import {
     MatTooltipModule,
     MatExpansionModule,
     MatCardModule,
-    MatSelectModule,
-    MatDialogModule
+    MatSelectModule
 } from '@angular/material';
 import { TranslateModule } from '@ngx-translate/core';
 import { TopnavComponent } from './components/topnav/topnav.component';
@@ -25,7 +24,6 @@ import { TreeViewModule } from '@progress/kendo-angular-treeview';
 import { ProductosComponent } from './productos/productos.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FiltrosComponent } from './productos/filtros/filtros.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
     imports: [
@@ -46,18 +44,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         ReactiveFormsModule,
         FormsModule,
         MatButtonModule,
-        MatSelectModule,
-        FlexLayoutModule.withConfig({addFlexToParent: false}),
-        MatDialogModule,
-        MatIconModule,
-        MatTooltipModule,
-        MatInputModule,
-        MatCardModule,
-        MatSidenavModule,
-        MatListModule,
-        MatExpansionModule,
-        MatSelectModule,
-        MatDialogModule
+        MatSelectModule
     ],
     exports: [
       CarritoComponent,
