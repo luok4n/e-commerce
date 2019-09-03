@@ -1,0 +1,7 @@
+<div>
+    Selected keys: {{selectedKeys.join(",")}}
+</div>
+<div style="padding-left: 30px;">
+  <kendo-treeview [nodes]="data" textField="name" kendoTreeViewExpandable kendoTreeViewSelectable kendoTreeViewHierarchyBinding
+  childrenField="sublevels" [selectBy]="'text'" [(selectedKeys)]="selectedKeys"></kendo-treeview>
+</div>

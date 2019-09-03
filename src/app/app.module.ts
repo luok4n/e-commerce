@@ -16,6 +16,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TreeViewModule } from '@progress/kendo-angular-treeview';
+
 // AoT requires an exported function for factories
 export const createTranslateLoader = (http: HttpClient) => {
     /* for development
@@ -42,7 +44,8 @@ export const createTranslateLoader = (http: HttpClient) => {
                 useFactory: createTranslateLoader,
                 deps: [HttpClient]
             }
-        })
+        }),
+        TreeViewModule
     ],
     providers: [],
     bootstrap: [AppComponent]

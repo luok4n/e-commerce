@@ -1,0 +1,7 @@
+<div *ngFor="let producto of productos">
+  <br>
+  <div *ngIf="producto.filtro">
+    <app-producto [producto]="producto"></app-producto>
+  </div>
+  <br>
+</div>

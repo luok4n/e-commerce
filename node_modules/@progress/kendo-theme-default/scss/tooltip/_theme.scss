@@ -1,0 +1,14 @@
+@include exports("tooltip/theme") {
+    .k-tooltip-wrapper {
+        .k-tooltip {
+            box-shadow: $popup-shadow;
+        }
+    }
+    .k-tooltip {
+        color: $tooltip-text;
+        background-color: $tooltip-bg;
+    }
+    .k-callout {
+        color: $tooltip-bg;
+    }
+}

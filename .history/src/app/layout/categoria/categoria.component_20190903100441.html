@@ -1,0 +1,4 @@
+<div style="padding-left: 30px;">
+  <kendo-treeview [nodes]="data" textField="name" kendoTreeViewExpandable kendoTreeViewSelectable kendoTreeViewHierarchyBinding
+  childrenField="sublevels" [selectBy]="'name'" (nodeClick)="select($event)" [(selectedKeys)]="selectedKeys"></kendo-treeview>
+</div>
