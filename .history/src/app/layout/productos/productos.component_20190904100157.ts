@@ -161,36 +161,8 @@ export class ProductosComponent implements OnInit {
             this.productos[j] = aux;
           }
         }
-      }
     }
-    this.ordenarCantidad();
   }
-
-  ordenarCantidad() {
-    if (this.ordenarForm.value.cantidad === 'Menor a mayor cantidad') {
-        for (let i = 0; i < this.productos.length - 1; i ++) {
-          for (let j = i + 1; j < this.productos.length; j++) {
-            if (this.productos[i].cantidad > this.productos[j].cantidad) {
-              let aux: any;
-              aux = this.productos[i];
-              this.productos[i] = this.productos[j];
-              this.productos[j] = aux;
-            }
-          }
-      }
-    }
-    if (this.ordenarForm.value.cantidad === 'Mayor a menor cantidad') {
-      for (let i = 0; i < this.productos.length - 1; i ++) {
-        for (let j = i + 1; j < this.productos.length; j++) {
-          if (this.productos[i].cantidad < this.productos[j].cantidad) {
-            let aux: any;
-            aux = this.productos[i];
-            this.productos[i] = this.productos[j];
-            this.productos[j] = aux;
-          }
-        }
-      }
-    }
   }
 
 }

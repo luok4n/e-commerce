@@ -145,52 +145,6 @@ export class ProductosComponent implements OnInit {
           }
       }
     }
-    if (this.ordenarForm.value.precio === 'Mayor a menor precio') {
-      for (let i = 0; i < this.productos.length - 1; i ++) {
-        for (let j = i + 1; j < this.productos.length; j++) {
-          let Auxprecio1: any;
-          Auxprecio1 = this.productos[i].precio.replace('$', '');
-          Auxprecio1 = Auxprecio1.replace(',', '');
-          let Auxprecio2: any;
-          Auxprecio2 = this.productos[j].precio.replace('$', '');
-          Auxprecio2 = Auxprecio2.replace(',', '');
-          if (+Auxprecio1 < +Auxprecio2) {
-            let aux: any;
-            aux = this.productos[i];
-            this.productos[i] = this.productos[j];
-            this.productos[j] = aux;
-          }
-        }
-      }
-    }
-    this.ordenarCantidad();
-  }
-
-  ordenarCantidad() {
-    if (this.ordenarForm.value.cantidad === 'Menor a mayor cantidad') {
-        for (let i = 0; i < this.productos.length - 1; i ++) {
-          for (let j = i + 1; j < this.productos.length; j++) {
-            if (this.productos[i].cantidad > this.productos[j].cantidad) {
-              let aux: any;
-              aux = this.productos[i];
-              this.productos[i] = this.productos[j];
-              this.productos[j] = aux;
-            }
-          }
-      }
-    }
-    if (this.ordenarForm.value.cantidad === 'Mayor a menor cantidad') {
-      for (let i = 0; i < this.productos.length - 1; i ++) {
-        for (let j = i + 1; j < this.productos.length; j++) {
-          if (this.productos[i].cantidad < this.productos[j].cantidad) {
-            let aux: any;
-            aux = this.productos[i];
-            this.productos[i] = this.productos[j];
-            this.productos[j] = aux;
-          }
-        }
-      }
-    }
   }
 
 }

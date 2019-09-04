@@ -163,7 +163,6 @@ export class ProductosComponent implements OnInit {
         }
       }
     }
-    this.ordenarCantidad();
   }
 
   ordenarCantidad() {
