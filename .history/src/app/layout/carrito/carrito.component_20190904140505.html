@@ -1,0 +1,15 @@
+<div class="ex1">
+  <h4>Carrito de compras</h4>
+    <div *ngFor="let producto of carrito; let i=index">
+      <mat-card class="card">
+        Nombre: {{producto.nombre}}
+        Precio: {{producto.precio}}
+        Stock: {{producto.cantidad}}
+        <button mat-icon-button matTooltip="Editar cantidad" (click)="openDialog(producto, i)"><mat-icon>edit</mat-icon></button>
+        <button mat-icon-button matTooltip="Eliminar producto" (click)="eliminarProducto(i)"><mat-icon>delete</mat-icon></button>
+      </mat-card>
+  <br>
+  <br>
+  <button mat-raised-button color="primary" (click)="realizarCompra()" >Realizar compra</button>
+  <br>
+</div>
