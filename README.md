@@ -1,6 +1,7 @@
 # e-commerce
 
 Proyecto realizado para tiendas "El Baratón”.
+E-commerce en el cual podemos ver diferentes categorías y sus respectivos subniveles de categoría con los cuales podremos filtrar los productos.
 
 ## Uso
 
@@ -8,7 +9,7 @@ Para compilar el proyecto solo se debe ingresar a la carpeta 'dist' y abrir el a
 
 ## Solución
 
-- Se optó usar el framework Angular en su septima versión.
+- Se optó usar el framework Angular en su séptima versión.
 - Para el listado de categorías y toda su funcionalidad se optó por usar el modulo "TreeView Overview".
 - Como apoyo al framework se optó por utilizar Angular material por sus diseños.
 - Se utilizó el API "fxFlex" para el manejo de las funcionalidades encargadas del responsive.
@@ -19,5 +20,5 @@ Para compilar el proyecto solo se debe ingresar a la carpeta 'dist' y abrir el a
 
 - Manejo de sesiones y permisos.
 - Panel de administrador.
-- Poder modificar las categorias y los productos.
-- Poder agregar imagenes a los productos.
+- Poder modificar las categorías y los productos.
+- Poder agregar imágenes a los productos.
