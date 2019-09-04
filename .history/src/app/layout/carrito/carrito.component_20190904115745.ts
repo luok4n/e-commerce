@@ -53,8 +53,6 @@ export class CarritoComponent implements OnInit {
     const dialogRef = this.dialog.open(EditarComponent, {
       width: '40%',
       data: {producto: producto, index: index}
-    }).afterClosed().subscribe(success => {
-      this.obtenerCarrito();
     });
   }
 

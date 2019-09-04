@@ -1,0 +1,23 @@
+<div class="ex1">
+  <h4>Carrito de compras</h4>
+  <table id="customers">
+    <tr>
+    <th>Producto</th>
+    <th>precio</th>
+    <th>cantidad</th>
+    <th></th>
+    <th></th>
+    </tr>
+    <tr *ngFor="let producto of carrito">
+    <td>{{producto.nombre}}</td>
+    <td>{{producto.precio}}</td>
+    <td>{{producto.cantidad}}</td>
+    <td><button mat-icon-button matTooltip="Editar cantidad"><mat-icon>edit</mat-icon></button></td>
+    <td><button mat-icon-button matTooltip="Editar cantidad"><mat-icon>delete</mat-icon></button></td>
+    </tr>
+  </table>
+  <br>
+  <br>
+  <button mat-raised-button color="primary" >Realizar compra</button>
+  <br>
+</div>

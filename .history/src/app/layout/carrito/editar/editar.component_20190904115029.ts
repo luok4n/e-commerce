@@ -1,21 +1,21 @@
 import { Component, OnInit, Input, Inject} from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormGroup, Validators, FormArray, FormBuilder} from '@angular/forms';
-import { EditarComponent } from './editar/editar.component';
 
 @Component({
-  selector: 'app-carrito',
-  templateUrl: './carrito.component.html',
-  styleUrls: ['./carrito.component.scss']
+  selector: 'app-editar',
+  templateUrl: './editar.component.html',
+  styleUrls: ['./editar.component.scss']
 })
 
-export class CarritoComponent implements OnInit {
+export class EditarComponent implements OnInit {
 
   carrito: Array<{idProducto: any, nombre: any, precio: any, cantidad: any, stock: any}> = [];
   cantidadForm: any;
+  producto: any;
 
   constructor(private formBuilder: FormBuilder,
-    public dialogRef: MatDialogRef<CarritoComponent>, public dialog: MatDialog,
+    public dialogRef: MatDialogRef<EditarComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
       this.cantidadForm = this.formBuilder.group({
         cantidad: ''
@@ -28,6 +28,7 @@ export class CarritoComponent implements OnInit {
 
 
   ngOnInit() {
+    this.producto = this.data.producto;
     this.obtenerCarrito();
   }
 
@@ -35,7 +36,7 @@ export class CarritoComponent implements OnInit {
     this.carrito = JSON.parse(localStorage.getItem('Carrito'));
   }
 
-  realizarCompra() {
+  guardarCambio() {
     alert('Compra realizada correctamente');
     localStorage.removeItem('Carrito');
     const carrito: Array<{idProducto: any, nombre: any, precio: any, cantidad: any, stock: any}> = [];
@@ -43,19 +44,5 @@ export class CarritoComponent implements OnInit {
     this.onNoClick();
   }
 
-  eliminarProducto(index) {
-    this.carrito.splice(index, 1);
-    alert('Producto eliminado correctamente');
-    localStorage.setItem('Carrito', JSON.stringify(this.carrito));
-  }
-
-  openDialog(producto, index): void {
-    const dialogRef = this.dialog.open(EditarComponent, {
-      width: '40%',
-      data: {producto: producto, index: index}
-    }).afterClosed().subscribe(success => {
-      this.obtenerCarrito();
-    });
-  }
 
 }

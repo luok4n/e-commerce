@@ -11,7 +11,7 @@
     <tr *ngFor="let producto of carrito; let i=index">
     <td>{{producto.nombre}}</td>
     <td>{{producto.precio}}</td>
-    <td>{{producto.cantidad}}</td>
+    <td>{{producto.stock}}</td>
     <td><button mat-icon-button matTooltip="Editar cantidad" (click)="openDialog(producto, i)"><mat-icon>edit</mat-icon></button></td>
     <td><button mat-icon-button matTooltip="Eliminar producto" (click)="eliminarProducto(i)"><mat-icon>delete</mat-icon></button></td>
     </tr>

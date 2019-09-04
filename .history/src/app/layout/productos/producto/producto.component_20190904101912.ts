@@ -18,10 +18,10 @@ export class ProductoComponent implements OnInit {
   }
 
 
-  openDialog(producto): void {
+  openDialog(data): void {
     const dialogRef = this.dialog.open(ModalComponent, {
       width: '70%',
-      data: {producto}
+      data: {data}
     });
   }
 

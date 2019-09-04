@@ -1,0 +1,16 @@
+<br>
+<div class="ex1">
+  Nombre: {{producto.nombre}}
+  <br>
+  Precio: {{producto.precio}}
+  <br>
+  Stock: {{producto.cantidad}}
+  <br>
+  <form [formGroup]="cantidadForm">
+    <mat-form-field class="example-full-width">
+      <input matInput formControlName="cantidad" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder="Cantidad del producto">
+    </mat-form-field>
+  </form>
+  <br>
+  <button mat-raised-button color="primary" (click)="guardarCambio()">Guardar producto</button>
+</div>

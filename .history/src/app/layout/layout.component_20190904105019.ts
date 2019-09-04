@@ -47,11 +47,9 @@ export class LayoutComponent implements OnInit {
 
     crearCarrito() {
       let carrito: Array<{idProducto: any, nombre: any, precio: any, cantidad: any, stock: any}> = [];
-      if (JSON.parse(localStorage.getItem('Carrito')) === null) {
-        localStorage.setItem('Carrito', JSON.stringify(carrito));
-      } else {
-        carrito = JSON.parse(localStorage.getItem('Carrito'));
-      }
+      carrito = JSON.parse(localStorage.getItem('Carrito'));
+      console.log(carrito);
+      localStorage.setItem('Carrito', JSON.stringify(carrito));
     }
 
 }

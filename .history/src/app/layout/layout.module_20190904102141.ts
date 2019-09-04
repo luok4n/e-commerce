@@ -27,7 +27,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FiltrosComponent } from './productos/filtros/filtros.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ModalComponent } from './productos/producto/modal/modal.component';
-import { EditarComponent } from './carrito/editar/editar.component';
 
 @NgModule({
     imports: [
@@ -67,8 +66,7 @@ import { EditarComponent } from './carrito/editar/editar.component';
       CategoriaComponent,
       ProductosComponent,
       FiltrosComponent,
-      ModalComponent,
-      EditarComponent
+      ModalComponent
     ],
     declarations: [
       LayoutComponent,
@@ -78,9 +76,8 @@ import { EditarComponent } from './carrito/editar/editar.component';
       CategoriaComponent,
       ProductosComponent,
       FiltrosComponent,
-      ModalComponent,
-      EditarComponent
+      ModalComponent
     ],
-    entryComponents: [ModalComponent, CarritoComponent, EditarComponent],
+    entryComponents: [ModalComponent],
 })
 export class LayoutModule {}

@@ -1,0 +1,17 @@
+<br>
+<div class="ex1">
+  Nombre: {{producto.nombre}}
+  <br>
+  Precio: {{producto.precio}}
+  <br>
+  Stock: {{producto.cantidad}}
+  <br>
+  <form [formGroup]="cantidadForm">
+    <mat-form-field class="example-full-width">
+      <input matInput formControlName="cantidad" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder="Cantidad del producto">
+    </mat-form-field>
+  </form>
+  <br>
+  Total: {{cantidadForm.value.cantidad}} * {{producto.precio}}
+  <button *ngIf="producto.disponible" mat-raised-button color="primary" (click)="guardarProducto()">Agregar producto</button>
+</div>

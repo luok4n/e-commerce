@@ -37,20 +37,19 @@
         0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
-#customers td, #customers th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-#customers tr:nth-child(even){background-color: #f2f2f2;}
-
-#customers tr:hover {background-color: #ddd;}
-
-#customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: rgb(255, 184, 77);
+.rendered-quill-content.ql-editor {
+  box-sizing: initial;
+  cursor: initial;
+  line-height: initial;
+  height: initial;
+  outline: initial;
+  overflow-y: initial;
+  padding: initial;
+  tab-size: initial;
+  -moz-tab-size: initial;
+  text-align: initial;
+  white-space: initial;
+  word-wrap: initial;
 }
 
 .mb-20 {

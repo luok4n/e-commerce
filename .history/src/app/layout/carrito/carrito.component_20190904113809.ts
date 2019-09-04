@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Inject} from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormGroup, Validators, FormArray, FormBuilder} from '@angular/forms';
-import { EditarComponent } from './editar/editar.component';
 
 @Component({
   selector: 'app-carrito',
@@ -15,7 +14,7 @@ export class CarritoComponent implements OnInit {
   cantidadForm: any;
 
   constructor(private formBuilder: FormBuilder,
-    public dialogRef: MatDialogRef<CarritoComponent>, public dialog: MatDialog,
+    public dialogRef: MatDialogRef<CarritoComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
       this.cantidadForm = this.formBuilder.group({
         cantidad: ''
@@ -45,17 +44,7 @@ export class CarritoComponent implements OnInit {
 
   eliminarProducto(index) {
     this.carrito.splice(index, 1);
-    alert('Producto eliminado correctamente');
     localStorage.setItem('Carrito', JSON.stringify(this.carrito));
-  }
-
-  openDialog(producto, index): void {
-    const dialogRef = this.dialog.open(EditarComponent, {
-      width: '40%',
-      data: {producto: producto, index: index}
-    }).afterClosed().subscribe(success => {
-      this.obtenerCarrito();
-    });
   }
 
 }

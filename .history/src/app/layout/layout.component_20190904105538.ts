@@ -52,6 +52,7 @@ export class LayoutComponent implements OnInit {
       } else {
         carrito = JSON.parse(localStorage.getItem('Carrito'));
       }
+      console.log(carrito);
     }
 
 }

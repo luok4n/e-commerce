@@ -8,7 +8,7 @@
   Stock: {{producto.cantidad}}
   <br>
   <br>
-  <button *ngIf="producto.disponible" mat-raised-button color="primary" (click)="openDialog(producto)">Agregar producto</button>
+  <button *ngIf="producto.disponible" mat-raised-button color="primary" (click)="openDialog()">Agregar producto</button>
   <button *ngIf="!producto.disponible" mat-raised-button color="primary" disabled >Producto no disponible</button>
   </mat-card>
 </div>
